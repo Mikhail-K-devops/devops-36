@@ -1,0 +1,103 @@
+#Install and setup
+
+pip3 isntall ansible - установка по через pyton установочник, позволяет поставить ансибл версии 2.10+
+
+внесение изменений в $PATH local and global
+https://translated.turbopages.org/proxy_u/en-ru.ru.4a6443bc-63bdac27-06c1f7ad-74722d776562/https/www.baeldung.com/linux/path-variable
+
+#BASH
+export test=<значение>
+chmod +x имяфайла
+chmod 755 /somefile
+sudo -s  (ctrl+D)
+gprep -r <>  | <> | <> поиск, в пайплайн поиска можно добавлять по ходу
+man -k <keyword>   or help
+at/atq/atrm crontab -e - sheduler for tasks (clear logs, backups)
+
+#!/bin/sh
+groupadd devops
+useradd -g devops -p $(openssl passwd 172800) mikhailk
+chage -d 0 mikhailk
+echo mikhailk ALL=(ALL:ALL) ALL' >> /etc/sudoers
+
+wget "RAWLINK"
+wget <link> -P ~/dstr/;sudo apt-get install ~/dstr/<name of packedge>
+
+#GIT
+
+git config --global user.email "mk_0@bk.ru"
+git config --global user.name "mikhailk"
+
+git rm --cached NAME_REPO_GIT
+
+git log --pretty=oneline
+git checkout fix^ - переместить HEAD на родителя fix
+git branch -f main fix~2 - переместить main на прародителя fix
+git checkout -b fix ; git checkout main ; git checkout v1.0.0
+git branch
+
+git add .
+
+git tag v1.0.0 ;  git tag -d v1.0.0 ; git push --delete v1.0.0
+
+git remote set-url --add origin git@gitlab.com:Mikhail-K-devops/devops-netology.git
+git remote add gitlab git@gitlab.com:Mikhail-K-devops/devops-netology.git  (ЛУЧШЕ ТАК)
+git push origin main
+
+git log --follow -p -- myfile Если вы хотите просмотреть все коммиты с изменениями конкретного файла, воспользуйтесь командой
+
+git status
+
+git commit -a -m "update 4.Virt.md"
+git push
+git clone git@github.com:Mikhail-K-devops/devops-netology.git
+
+ git log --oneline
+ git tag -a v00.00.00 adcf911
+ git push origin v00.00.02 ИЛИ --tags
+ git push origin --delete <tag>
+
+# INTERESTING APP FOR REPO CLEAN and many others
+sudo pip  install git-filter-repo
+git filter-repo --invert-paths --force --path "~/devops-netology/sysadm-homeworks/02-git-04-tools/vagrant_2.3.4-1_amd64.deb"
+
+#DOCKER
+
+/home/mikhailk/devops-netology/dockerbuild.sh
+nano /home/mikhailk/devops-netology/dockerbuild.sh
+/opt/docker/nginxmk1# nano Dockerfile
+/usr/share/nginx/html/index.html ?
+
+# узнать версии образов в репозитарии докера
+docker trust inspect nginx | grep "SignedTag" | awk -F'"' '{print $4}'
+
+установка докер плагина для ансибл
+https://docs.ansible.com/ansible/latest/collections/community/docker/docker_connection.html
+ansible-galaxy collection install community.docker 
+
+DOCKER ISNTALL:
+curl -fsSL https://get.docker.com -o get-docker.sh
+$ sh get-docker.sh
+usermod -aG docker $USER (чтобы без sudo а затем релогин) 00000000000000'
+
+docker run --name docker-nginx -p 80:80 -d -v ~/devops-netology/nginx1/static:/usr/share/nginx/html nginx
+
+ docker login -u devmikhailk --password-stdin 
+ WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+ WARNING! Your password will be stored unencrypted in /home/mikhailk/.docker/config.json.
+ Configure a credential helper to remove this warning. See
+ https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+systemctl enable docker ; service docker start (status)
+docker image ls
+docker run ; docker run -it ubuntu bash ; docker run -d nginx (запуск в фоновом режиме)
+docker exec  (запуск команд в контейнере)
+docker ps (-a)
+docker stop distracted_elgamal (из поля NAMES)
+docker rm (из поля NAMES)
+docker rmi (удалит Images) docker system prune (удалит все неиспользуемые) ; -a -f ; --volume
+docker logs --tail 1 ; -f  (из поля NAMES)
+docker rename oldname newname
+
+
+#OTHER

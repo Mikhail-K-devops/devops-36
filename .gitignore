@@ -1,0 +1,7 @@
+# ignore old files, dockerfiles, terraform --folders
+olddata/*.*
+Dockerfile/*.*
+**/terraform
+*.deb
+*.exe
+*.gpg
