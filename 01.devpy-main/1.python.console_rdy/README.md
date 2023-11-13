@@ -48,7 +48,7 @@ https://www.hackerrank.com/mk_02
 
 https://replit.com/@mk010/Python#per_squa.py
 https://replit.com/@mk010/Python#main.py
-exec(open("per_squa.py").read())
+
 
 ## Задача №3
 Нужно разработать приложение для финансового планирования.  
@@ -74,7 +74,7 @@ exec(open("per_squa.py").read())
 ```
 https://replit.com/@mk010/Python#fin_plan.py
 https://replit.com/@mk010/Python#main.py
-exec(open("fin_plan.py").read())
+
 ---
 Инструкция по выполнению домашнего задания:
 

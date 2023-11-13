@@ -1,3 +1,5 @@
+#!"C:\devops-36\puthon312\python.exe
+
 """ Задача №1 Мы делаем MVP dating-сервиса, и у нас есть список парней и девушек (их число может варьироваться):
 boys = ['Peter', 'Alex', 'John', 'Arthur', 'Richard']
 girls = ['Kate', 'Liza', 'Kira', 'Emma', 'Trisha']
@@ -23,11 +25,10 @@ def bg():
 	girls = ['Kate', 'Liza', 'Kira', 'Emma', 'Trisha']
 	# girls = ['Kate', 'Liza', 'Kira', 'Emma']
 
-	# однострок
+	# однострок ТОЛЬКО в python312+
 	print(f'Пары:\n{'\n'.join((map(str, list(zip(sorted(boys), sorted(girls)))))).replace(',', ' и').replace("'", '')}' if len(boys) == len(girls) else f'Нет пары')
 
 	if len(boys) == len(girls):
-
 		# через зип
 		abg = list(zip(sorted(boys), sorted(girls)))
 		print("Пары:")
