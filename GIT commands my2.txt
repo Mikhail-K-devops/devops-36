@@ -24,6 +24,7 @@ wget "RAWLINK"
 wget <link> -P ~/dstr/;sudo apt-get install ~/dstr/<name of packedge>
 
 #GIT
+git config --list --show-origin    -- все настройки GIT
 
 git config --global user.email "mk_0@bk.ru"
 git config --global user.name "mikhailk"
