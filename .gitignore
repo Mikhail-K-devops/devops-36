@@ -6,5 +6,6 @@ Dockerfile/*.*
 *.exe
 *.gpg
 *.pack
+**/_distribs/*
 
 # line for second commit
