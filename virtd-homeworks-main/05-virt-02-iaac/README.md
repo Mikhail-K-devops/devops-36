@@ -71,8 +71,24 @@
 
 > ```bash
 > curl -LO https://releases.hashicorp.com/terraform/1.5.7/terraform_1.5.7_linux_amd64.zip
+> curl -LO https://hashicorp-releases.yandexcloud.net/terraform/1.5.7/terraform_1.5.7_linux_amd64.zip
 > 
+> vagrant@ubserver-dev:/usr/local/bin$ terraform version
+> Terraform v1.5.7
+> on linux_amd64
+> 
+> Your version of Terraform is out of date! The latest version
+> is 1.6.6. You can update by downloading from https://www.terraform.io/downloads.html
 > ```
+> ```bash
+> vagrant@ubserver-dev:/usr/local/bin$ ansible --version
+> ansible [core 2.14.9]
+> ```
+> ```bash
+> vagrant@ubserver-dev:~$ docker -v
+> Docker version 20.10.24, build 297e128
+> ```
+
 ***
 
 
@@ -85,6 +101,65 @@
 ```
 docker ps,
 ```
+
+***
+
+> ```bash
+> vagrant@ubserver-dev:~$ docker version
+> Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/version": dial unix /var/run/docker.sock: connect: permission denied
+> vagrant@ubserver-dev:~$ sudo usermod -aG docker $USER
+> usermod: group 'docker' does not exist
+>
+> vagrant@ubserver-dev:~$ sudo docker version
+> Client:
+>  Version:           20.10.24
+>  API version:       1.41
+>  Go version:        go1.20.7
+>  Git commit:        297e128
+>  Built:             Wed Aug 23 20:54:23 2023
+>  OS/Arch:           linux/amd64
+>  Context:           default
+>  Experimental:      true
+> 
+> Server:
+>  Engine:
+>   Version:          20.10.24
+>   API version:      1.41 (minimum version 1.12)
+>   Go version:       go1.20.7
+>   Git commit:       5d6db84
+>   Built:            Wed Aug 23 20:55:00 2023
+>   OS/Arch:          linux/amd64
+>   Experimental:     false
+>  containerd:
+>   Version:          v1.6.20
+>   GitCommit:        2806fc1057397dbaeefbea0e4e17bddfbd388f38
+>  runc:
+>   Version:          1.1.5
+>   GitCommit:
+>  docker-init:
+>   Version:          0.19.0
+>   GitCommit:        de40ad0
+> 
+> vagrant@ubserver-dev:~$ sudo groupadd docker
+> vagrant@ubserver-dev:~$ sudo usermod -aG docker $USER
+> 
+> vagrant@ubserver-dev:~$ groups vagrant
+> vagrant : vagrant adm cdrom sudo dip plugdev lxd docker
+> vagrant@ubserver-dev:~$ newgrp docker
+> vagrant@ubserver-dev:~$ ls -l /var/run/docker.sock
+> srw-rw---- 1 root root 0 Dec 22 20:38 /var/run/docker.sock
+> vagrant@ubserver-dev:~$ sudo chmod o+rw /var/run/docker.sock
+> vagrant@ubserver-dev:~$ ls -l /var/run/docker.sock
+> srw-rw-rw- 1 root root 0 Dec 22 20:38 /var/run/docker.sock
+> vagrant@ubserver-dev:~$ docker ps
+> CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+> 
+> ```
+
+***
+
+
 Vagrantfile из лекции и код ansible находятся в [папке](https://github.com/netology-code/virt-homeworks/tree/virt-11/05-virt-02-iaac/src).
 
 Примечание. Если Vagrant выдаёт ошибку:

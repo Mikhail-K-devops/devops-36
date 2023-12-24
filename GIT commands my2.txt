@@ -99,7 +99,7 @@ docker trust inspect nginx | grep "SignedTag" | awk -F'"' '{print $4}'
 https://docs.ansible.com/ansible/latest/collections/community/docker/docker_connection.html
 ansible-galaxy collection install community.docker 
 
-DOCKER ISNTALL:
+DOCKER INSTALL:
 curl -fsSL https://get.docker.com -o get-docker.sh
 $ sh get-docker.sh
 usermod -aG docker $USER (чтобы без sudo а затем релогин) 00000000000000'
