@@ -104,6 +104,7 @@ docker ps,
 
 ***
 
+> ### Mikhail K
 > ```bash
 > vagrant@ubserver-dev:~$ docker version
 > Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/version": dial unix /var/run/docker.sock: connect: permission denied
@@ -153,8 +154,6 @@ docker ps,
 > srw-rw-rw- 1 root root 0 Dec 22 20:38 /var/run/docker.sock
 > vagrant@ubserver-dev:~$ docker ps
 > CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
-
-> 
 > ```
 
 ***
@@ -177,3 +176,14 @@ Error: The requested URL returned error: 404:
 
 ***Приложите скриншоты в качестве решения на эту задачу. Допускается неполное выполнение данного задания если не сможете совладать с Windows.*** 
 
+> ### Mikhail K
+> ```bash
+> vagrant box add bento/ubuntu-20.04 ~/05-virt-02-iaac/virtd-homeworks-main/05-virt-02-iaac/src/vagrant/vagrant.box
+>  ==> box: Box file was not detected as metadata. Adding it directly...
+>  ==> box: Adding box 'bento/ubuntu-20.04' (v0) for provider: 
+>      box: Unpacking necessary files from: file:///home/vagrant/05-virt-02-iaac/virtd-homeworks-main/05-virt-02-iaac/src/vagrant/vagrant.box
+>  ==> box: Successfully added box 'bento/ubuntu-20.04' (v0) for 'virtualbox'!
+> ```
+> ![Решение](images/result.png)
+
+***

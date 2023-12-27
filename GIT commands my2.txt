@@ -16,7 +16,7 @@ chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
 --
 ssh vagrant@192.168.56.101 -i ~/.ssh/whome
-
+sudo lvextend -r -l +100%FREE /dev/ubuntu-vg/ubuntu-lv - увеличение раздела (sudo pvs sudo lvs)
 
 #Install and setup
 
