@@ -178,7 +178,7 @@ Error: The requested URL returned error: 404:
 
 > ### Mikhail K
 > ```bash
-> vagrant box add bento/ubuntu-20.04 ~/05-virt-02-iaac/virtd-homeworks-main/05-virt-02-iaac/src/vagrant/vagrant.box
+> vagrant@ubserver-dev:~$ vagrant box add bento/ubuntu-20.04 ~/05-virt-02-iaac/virtd-homeworks-main/05-virt-02-iaac/src/vagrant/vagrant.box
 >  ==> box: Box file was not detected as metadata. Adding it directly...
 >  ==> box: Adding box 'bento/ubuntu-20.04' (v0) for provider: 
 >      box: Unpacking necessary files from: file:///home/vagrant/05-virt-02-iaac/virtd-homeworks-main/05-virt-02-iaac/src/vagrant/vagrant.box
