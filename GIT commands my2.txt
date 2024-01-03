@@ -121,7 +121,28 @@ docker stop distracted_elgamal (из поля NAMES)
 docker rm (из поля NAMES)
 docker rmi (удалит Images) docker system prune (удалит все неиспользуемые) ; -a -f ; --volume
 docker logs --tail 1 ; -f  (из поля NAMES)
-docker rename oldname newname
+
+docker run: Запускает контейнер на основе образа.
+    -d (detach): Запускает контейнер в фоновом режиме.
+    -p (publish): Пробрасывает порты между хостом и контейнером.
+    -v (volume): Монтирует директорию хоста в контейнер.
+docker build: Создает образ на основе Dockerfile.
+    -t (tag): Устанавливает тег для образа.
+    -f (file): Указывает путь к Dockerfile.
+docker pull: Загружает образ из реестра Docker Hub.
+    (image_name:tag): Указывает конкретный образ для загрузки.
+docker push: Отправляет образ в реестр Docker Hub.
+    (image_name:tag): Указывает конкретный образ для отправки.
+docker ps: Отображает запущенные контейнеры.
+    -a (all): Показывает все контейнеры, включая остановленные.
+docker stop: Останавливает контейнер.
+    (container_id): Указывает конкретный контейнер для остановки.
+docker rm: Удаляет контейнер.
+    (container_id): Указывает конкретный контейнер для удаления.
+docker rmi: Удаляет образ.
+    (image_name:tag): Указывает конкретный образ для удаления.
+docker rename <oldname> <newname>
 
 
 #OTHER
+docker build -t javdet/ansible:2.9.99 .

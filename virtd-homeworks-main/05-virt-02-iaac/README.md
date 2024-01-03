@@ -156,7 +156,7 @@ docker ps,
 > CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 > ```
 
-***
+*** 
 
 
 Vagrantfile из лекции и код ansible находятся в [папке](https://github.com/netology-code/virt-homeworks/tree/virt-11/05-virt-02-iaac/src).
