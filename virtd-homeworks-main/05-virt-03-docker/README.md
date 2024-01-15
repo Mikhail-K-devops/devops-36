@@ -47,6 +47,16 @@ Hey, Netology
 
 Опубликуйте созданный fork в своём репозитории и предоставьте ответ в виде ссылки на https://hub.docker.com/username_repo.
 
+***
+
+> ### Mikhail K
+> [devmikhailk docker nginx repo](https://hub.docker.com/r/devmikhailk/nginx/tags)
+> ![nginx in elinks](/_task1/nginx.png "elinks view")
+>
+> ![push to docker repo](/_task1/docker_push_console.png "push to docker repo")
+
+***
+
 ## Задача 2
 
 Посмотрите на сценарий ниже и ответьте на вопрос:
@@ -67,6 +77,36 @@ Hey, Netology
 - MongoDB как основное хранилище данных для Java-приложения;
 - Gitlab-сервер для реализации CI/CD-процессов и приватный (закрытый) Docker Registry.
 
+***
+> ### Mikhail K
+> Со слов chatGPT :)
+>
+> Высоконагруженное монолитное Java веб-приложение: <b>Docker-контейнер.</b>
+> Обоснование: Docker-контейнеры обеспечивают изоляцию, масштабируемость и гибкость развертывания для высоконагруженных приложений, позволяя эффективно использовать ресурсы и упрощать управление.
+>
+> Node.js веб-приложение: <b>Docker-контейнер.</b>
+> Обоснование: Docker-контейнеры обеспечивают единообразное окружение и упрощают процесс развертывания Node.js приложений, что способствует ускорению разработки и обеспечивает надежность в производственной среде.
+> 
+> Мобильное приложение с версиями для Android и iOS: <b>Виртуальная машина.</b>
+> Обоснование: Виртуальные машины позволяют иметь доступ к разным операционным системам, что полезно при разработке и тестировании мобильных приложений на разных платформах.
+> 
+> Шина данных на базе Apache Kafka: <b>Docker-контейнер.</b>
+> Обоснование: Docker-контейнеры обеспечивают гибкость и масштабируемость развертывания Kafka брокеров и компонентов шины данных, что упрощает управление и обеспечивает надежность.
+> 
+> Elasticsearch-кластер для реализации логирования продуктивного веб-приложения: <b>Docker-контейнер.</b>
+> Обоснование: Docker-контейнеры позволяют легко создавать и масштабировать Elasticsearch, Logstash и Kibana ноды, обеспечивая гибкость и упрощение управления для логирования приложения.
+> 
+> Мониторинг-стек на базе Prometheus и Grafana: <b>Docker-контейнер.</b>
+> Обоснование: Docker-контейнеры обеспечивают удобство развертывания и масштабируемость инфраструктуры мониторинга, что позволяет эффективно управлять и анализировать данные мониторинга.
+> 
+> MongoDB как основное хранилище данных для Java-приложения: <b>Docker-контейнер.</b>
+> Обоснование: Docker-контейнеры обеспечивают простоту развертывания и управления MongoDB, позволяя эффективно использовать ресурсы и обеспечивая гибкость в разработке и развертывании приложений.
+> 
+> Gitlab-сервер для реализации CI/CD-процессов и приватный Docker Registry: <b>Docker-контейнер.</b>
+> Обоснование: Docker-контейнеры позволяют легко развертывать Gitlab-сервер и приватный Docker Registry, обеспечивая гибкость и удобство в управлении CI/CD-процессами и контейнерами.
+
+***
+
 ## Задача 3
 
 - Запустите первый контейнер из образа ***centos*** c любым тегом в фоновом режиме, подключив папку ```/data``` из текущей рабочей директории на хостовой машине в ```/data``` контейнера.
@@ -75,12 +115,39 @@ Hey, Netology
 - Добавьте ещё один файл в папку ```/data``` на хостовой машине.
 - Подключитесь во второй контейнер и отобразите листинг и содержание файлов в ```/data``` контейнера.
 
+***
+> ### Mikhail K
+> - centos
+> ```bash
+> vagrant@ubserver-dev:~/05-virt-02-iaac/virtd-homeworks-main/05-virt-03-docker$ docker run -d -v ~/05-virt-02-iaac/virtd-homeworks-main/05-virt-03-docker/data:/data centos
+> ```
+> - debian
+> ```bash
+> vagrant@ubserver-dev:~/05-virt-02-iaac/virtd-homeworks-main/05-virt-03-docker$ docker run -d -v ~/05-virt-02-iaac/virtd-homeworks-main/05-virt-03-docker/data:/data debian
+> ```
+> ```bash
+> # docker-compose -f ~/virtd-homeworks-main/05-virt-03-docker/_task3/docker-compose1.yaml up -d
+> docker-compose -f ~/mountpoint2/_transfer/src/docker-compose1.yaml up -d
+> vagrant@ubserver-dev:~$ docker exec debi01 sh -c 'echo "debi01" >> /data/3.txt'
+> vagrant@ubserver-dev:~$ docker exec debi01 cat /data/3.txt
+> debi01
+> vagrant@ubserver-dev:~$ docker exec cent01 sh -c 'echo "cent01" >> /data/3.txt'
+> vagrant@ubserver-dev:~$ docker exec cent01 cat /data/3.txt
+> debi01
+> cent01
+> ```
+***
+
 ## Задача 4 (*)
 
 Воспроизведите практическую часть лекции самостоятельно.
 
 Соберите Docker-образ с Ansible, загрузите на Docker Hub и пришлите ссылку вместе с остальными ответами к задачам.
 
+***
+> ## Mikhail K
+> [devmikhailk docker repo alpine](https://hub.docker.com/r/devmikhailk/alpine/tags)
+***
 
 ---
 

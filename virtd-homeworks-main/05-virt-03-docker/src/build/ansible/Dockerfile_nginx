@@ -1,0 +1,28 @@
+FROM nginx:latest
+
+MAINTAINER Mikhail K <mk_0@bk.ru>
+
+ENV TZ=Europe/Moscow
+
+RUN CARGO_NET_GIT_FETCH_WITH_CLI=1 && \
+    apt full update -y &&\
+    apt install nano -y &&\
+    rm -rf /root/.cargo
+
+RUN rm /usr/share/nginx/html/index.html && \
+    touch /usr/share/nginx/html/index.html && \
+    echo '<html>' && \
+    echo '<head>' && \
+    echo 'Hey, Netology' && \
+    echo '</head>' && \
+    echo '<body>' && \
+    echo '<h1>I’m DevOps Engineer!</h1>' && \
+    echo '</body>' && \
+    echo '</html>' && \
+    echo 'localhost' > /etc/ansible/hosts && \
+    echo "daemon off;" >> /etc/nginx/nginx.conf
+WORKDIR /usr/share/nginx/html/
+
+CMD [ "cat", "index.html" ]
+
+CMD [ "nginx" ]

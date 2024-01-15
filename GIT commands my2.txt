@@ -1,8 +1,18 @@
+cat ~/.bash_history - история консоли
+
+sudo mkdir ~/mounthome && sudo mount -t vboxsf share ~/mounthome
+sudo mount -t cifs //192.168.56.102/_git_devops ~/mountpoint1 -o username=u3buhu@ya.ru,password=xxxxxxxx - Samba
+sudo apt install cifs-utils - CIFS
+sudo mount.cifs -v //192.168.56.103/_git_devops ~/mountpoint3 --verbose -o user=u3buhu@ya.ru,password=Exxxxxxx,domain=Jinhae-PC
+
+
+sudo timedatectl set-timezone Europe/Moscow
+
 apt-cache policy package_name
 sudo apt install package_name=version
 sudo apt update && sudo apt upgrade -y
 sudo ip link set enp0s8 up
-/etc/netplan/01-netcfg.yaml
+/etc/   netplan/01-netcfg.yaml
 network:
   version: 2
   renderer: networkd
@@ -104,7 +114,7 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 $ sh get-docker.sh
 usermod -aG docker $USER (чтобы без sudo а затем релогин) 00000000000000'
 
-docker run --name docker-nginx -p 80:80 -d -v ~/devops-netology/nginx1/static:/usr/share/nginx/html nginx
+
 
  docker login -u devmikhailk --password-stdin 
  WARNING! Using --password via the CLI is insecure. Use --password-stdin.
@@ -144,5 +154,8 @@ docker rmi: Удаляет образ.
 docker rename <oldname> <newname>
 
 
-#OTHER
+# OTHER
 docker build -t javdet/ansible:2.9.99 .
+
+# внутри контейнера
+docker exec debi01 sh -c 'echo "debi01" >> /data/3.txt'
