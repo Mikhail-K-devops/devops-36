@@ -52,9 +52,9 @@ Hey, Netology
 > ### Mikhail K
 > [devmikhailk docker nginx repo](https://hub.docker.com/r/devmikhailk/nginx/tags)
 > 
-> ![nginx in elinks](/images/nginx.png "elinks view")
+> ![nginx in elinks](images/nginx.png "elinks view")
 >
-> ![push to docker repo](/images/docker_push_console.png "push to docker repo")
+> ![push to docker repo](images/docker_push_console.png "push to docker repo")
 
 ***
 
