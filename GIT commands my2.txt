@@ -1,9 +1,22 @@
+Yandex Cloud CLI 0.116.0 linux/amd64
+curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh install.sh | bash
+#vlan create
+yc vpc network create --name vlan01 --labels my-label=netology --description "MainVLAN"
+#list images in yc
+yc compute image list
+yc compute image delete fd8uih8384p72e3f02da
+yc vpc subnet create --name vlan01-ru1-a --zone ru-central1-a --range 10.1.2.0/24 --network-name vlan01 --description "MainVLAN-subnet"
+
+
+sudo -E sh -c 'echo "YC_FOLDER_ID=$YC_FOLDER_ID" >> 1.sh && echo "YC_ZONE=$YC_ZONE" >> 1.sh && echo "YC_SUBNET_ID=$YC_SUBNET_ID" >> 1.sh && echo "YC_TOKEN=$YC_TOKEN" >> 1.sh'
+
 cat ~/.bash_history - история консоли
 
 sudo mkdir ~/mounthome && sudo mount -t vboxsf share ~/mounthome
 sudo mount -t cifs //192.168.56.102/_git_devops ~/mountpoint1 -o username=u3buhu@ya.ru,password=xxxxxxxx - Samba
 sudo apt install cifs-utils - CIFS
 sudo mount.cifs -v //192.168.56.103/_git_devops ~/mountpoint3 --verbose -o user=u3buhu@ya.ru,password=Exxxxxxx,domain=Jinhae-PC
+sudo mount.cifs -v //192.168.56.102/devops-36 ~/mountpoint2 --verbose -o user=u3buhu@ya.ru,password=Exxxxxxxxx,domain=Jinhae-PC
 
 
 sudo timedatectl set-timezone Europe/Moscow

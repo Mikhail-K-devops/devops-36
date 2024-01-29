@@ -1,0 +1,34 @@
+{
+  "variables": {
+      "yc_token": "{{env `YC_TOKEN`}}",
+      "yc_subnet": "{{env `YC_SUBNET_ID`}}",
+      "yc_folder": "{{env `YC_FOLDER_ID`}}"
+  },
+  "builders": [
+    {
+      "type": "yandex",
+      "folder_id":  "{{user `yc_folder`}}",
+      "source_image_family": "ubuntu-2004-lts",
+      "ssh_username": "ubuntu",
+      "use_ipv4_nat": true,
+      "image_description": "by packer for yc(ubuntu.json)",
+      "image_family": "my-images",
+      "image_name": "packer-ubuntu-{{timestamp}}",
+      "subnet_id": "{{user `yc_subnet`}}",
+      "disk_type": "network-nvme",
+      "zone": "ru-central1-a",
+      "token": "{{user `yc_token`}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sleep 30",
+        "sudo apt-get update",
+        "sudo apt-get upgrade -y",
+        "sudo apt-get install -y nginx"
+      ]
+    }
+  ]
+}

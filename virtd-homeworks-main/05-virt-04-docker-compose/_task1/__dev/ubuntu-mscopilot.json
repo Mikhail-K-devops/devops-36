@@ -1,0 +1,25 @@
+{
+  "builders": [
+    {
+      "type": "yandex",
+      "service_account_key_file": "/path/to/your/account.json",
+      "folder_id": "b1gdfvmeb8tq3rcfnrvb",
+      "source_image_family": "ubuntu-2204-lts",
+      "image_name": "packer-ubuntu-{{timestamp}}",
+      "ssh_username": "ubuntu",
+      "use_ipv4_nat": true,
+      "zone": "ru-central1-a"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sleep 30",
+        "sudo apt-get update",
+        "sudo apt-get upgrade -y",
+        "sudo apt-get install -y nginx"
+      ]
+    }
+  ]
+}

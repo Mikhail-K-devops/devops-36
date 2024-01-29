@@ -27,9 +27,31 @@
 
 
 Создайте собственный образ любой операционной системы (например, debian-11) с помощью Packer версии 1.7.0 . Перед выполнением задания изучите ([инструкцию!!!](https://cloud.yandex.ru/docs/tutorials/infrastructure-management/packer-quickstart)). В инструкции указана минимальная версия 1.5, но нужно использовать 1.7, так как там есть нужный нам функционал
-
-
 Чтобы получить зачёт, вам нужно предоставить скриншот страницы с созданным образом из личного кабинета YandexCloud.
+
+***
+> ```bash
+> vagrant@ubserver-dev:/var/tmp/packer$ sudo curl -o /var/tmp/packer/packer_1.7.0_linux_amd64.zip -L https://hashicorp-releases.yandexcloud.net/packer/1.7.0/packer_1.7.0_linux_amd64.zip
+> vagrant@ubserver-dev:/var/tmp/packer$ sudo unzip packer_1.7.0_linux_amd64.zip
+> vagrant@ubserver-dev:/var/tmp/packer$ sudo mv packer /usr/bin/
+>
+> vagrant@ubserver-dev:~/mountpoint2/virtd-homeworks-main/05-virt-04-docker-compose/_task1$ packer build yandex.pkr.hcl
+> yandex.yc-toolbox: output will be in this color.
+> 
+> ==> yandex.yc-toolbox: Creating temporary ssh key for instance...
+> ==> yandex.yc-toolbox: Using as source image: fd8m2ak64lipvicd94sf (name: "ubuntu-20-04-lts-v20240122", family: "ubuntu-2004-lts")
+> ==> yandex.yc-toolbox: Use provided subnet id e9b0le7okl0r6b61hu0m
+> ==> yandex.yc-toolbox: Creating disk...
+> .............MNOGO BUKFF.............
+> Build 'yandex.yc-toolbox' finished after 3 minutes 29 seconds.
+> ==> Wait completed after 3 minutes 29 seconds
+> ==> Builds finished. The artifacts of successful builds are:
+> --> yandex.yc-toolbox: A disk image was created: yc-toolbox (id: fd8uih8384p72e3f02da) with family name my-images
+> ```
+>  ![image in yc](_task1/image_in_yc.png "image in yc")
+
+
+***
 
 ## Задача 2
 
