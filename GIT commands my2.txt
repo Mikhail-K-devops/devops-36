@@ -15,9 +15,16 @@ cat ~/.bash_history - история консоли
 sudo mkdir ~/mounthome && sudo mount -t vboxsf share ~/mounthome
 sudo mount -t cifs //192.168.56.102/_git_devops ~/mountpoint1 -o username=u3buhu@ya.ru,password=xxxxxxxx - Samba
 sudo apt install cifs-utils - CIFS
-sudo mount.cifs -v //192.168.56.103/_git_devops ~/mountpoint3 --verbose -o user=u3buhu@ya.ru,password=Exxxxxxx,domain=Jinhae-PC
-sudo mount.cifs -v //192.168.56.102/devops-36 ~/mountpoint2 --verbose -o user=u3buhu@ya.ru,password=Exxxxxxxxx,domain=Jinhae-PC
 
+---
+# how to map drive
+sudo mount.cifs -v //192.168.56.103/devops-36 ~/mountpoint2 --verbose -o user=u3buhu@ya.ru,password=Exxxxxxxxx,domain=Jinhae-PC,uid=1000,gid=1000
+or
+chmod 600 ~/.smbcredentials    with:
+ username=u3buhu@ya.ru
+ password=Exxxxxxx
+sudo mount.cifs -v //192.168.56.103/_git_devops ~/mountpoint3 --verbose -o cred=/home/vagrant/.smbcredentials,domain=Jinhae-PC,uid=<vagrant_uid>,gid=<vagrant_gid>
+---
 
 sudo timedatectl set-timezone Europe/Moscow
 
@@ -78,6 +85,10 @@ git config --global user.name "mikhailk"
 git rm --cached NAME_REPO_GIT
 
 git log --pretty=oneline
+
+git log --graph --oneline --max-count=10
+git reset --soft HEAD~1
+
 git checkout fix^ - переместить HEAD на родителя fix
 git branch -f main fix~2 - переместить main на прародителя fix
 git checkout -b fix ; git checkout main ; git checkout v1.0.0

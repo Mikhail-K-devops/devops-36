@@ -1,0 +1,32 @@
+{
+  "variables": {
+      "yc_token": "{{env `YC_TOKEN`}}",
+      "yc_subnet": "{{env `YC_SUBNET_ID`}}",
+      "yc_folder": "{{env `YC_FOLDER_ID`}}"
+  },
+  "builders": [
+    {
+      "disk_type": "network-nvme",
+      "folder_id":  "{{user `yc_folder`}}",
+      "image_description": "by packer",
+      "image_family": "centos",
+      "image_name": "centos-7-base",
+      "source_image_family": "centos-7",
+      "ssh_username": "centos",
+      "subnet_id": "{{user `yc_subnet`}}",
+      "token": "{{user `yc_token`}}",
+      "type": "yandex",
+      "use_ipv4_nat": true,
+      "zone": "ru-central1-a"
+    }
+  ],
+  "provisioners": [
+    {
+      "inline": [
+        "sudo yum -y update",
+        "sudo yum -y install bridge-utils bind-utils iptables curl net-tools tcpdump rsync telnet openssh-server"
+      ],
+      "type": "shell"
+    }
+  ]
+}

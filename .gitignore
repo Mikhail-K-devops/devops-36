@@ -7,6 +7,9 @@ Dockerfile/*.*
 *.gpg
 *.pack
 **/_distribs/*
+*.ppk
+*.pub
+**/yc.txt
 
 # line for second commit
 
